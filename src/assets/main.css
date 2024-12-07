@@ -1,0 +1,20 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-slate-900;
+    @apply dark:bg-neutral-900 dark:text-slate-50;
+  }
+  h1 {
+      @apply text-3xl font-bold;
+  }
+  h2 {
+      @apply text-2xl font-bold;
+  }
+  h3 {
+      @apply text-xl font-bold;
+  }
+}
