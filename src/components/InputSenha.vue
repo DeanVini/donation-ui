@@ -1,6 +1,6 @@
 <template>
   <InputBase
-    type="text"
+    type="password"
     :label="props.label"
     @atualizar:valor-input="(valor: string) => emit('atualizar:valorInput', valor)"
   />
