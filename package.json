@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@alasdair/eslint-plugin-max-len": "^1.1.0",
+    "@vueuse/core": "^12.0.0",
     "eslint-plugin-deprecate": "^0.8.5",
     "eslint-plugin-electron-extension": "^1.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-sonarjs": "^3.0.1",
     "eslint-plugin-tsdoc": "^0.4.0",
     "eslint-plugin-unicorn": "^56.0.1",
+    "lucide-vue-next": "^0.468.0",
     "pinia": "^2.2.6",
     "vue": "^3.5.12",
     "vue-eslint-parser": "^9.4.3",
