@@ -2,6 +2,7 @@
   <InputBase
     type="password"
     :label="props.label"
+    :valor-input="props.valorInput"
     @atualizar:valor-input="(valor: string) => emit('atualizar:valorInput', valor)"
   />
 </template>

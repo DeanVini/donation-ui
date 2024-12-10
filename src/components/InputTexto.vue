@@ -2,6 +2,7 @@
   <InputBase
     type="text"
     :label="props.label"
+    :valor-input="valorInput"
     @atualizar:valor-input="(valor: string) => emit('atualizar:valorInput', valor)"
   />
 </template>

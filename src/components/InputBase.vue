@@ -2,26 +2,30 @@
   <div class="w-fit">
     <label for="input" class="relative h-full">
       <span
-        :class="{ 'translate-y-[-90%] translate-x-[-7px]': labelAcima }"
-        class="absolute ml-1 text-zinc-500 p-1 w-full transition-all h-max flex items-center pointer-events-none h-full"
+        :class="{
+          'translate-y-[-90%] translate-x-[-7px]': labelAcima,
+          'dark:!text-zinc-400': emFoco,
+        }"
+        class="absolute ml-1 text-zinc-500 dark:text-zinc-500 p-1 pt-1.5 w-full transition-all h-max flex pointer-events-none items-center"
       >
         {{ props.label }}
       </span>
       <input
-        class="z-10 focus:shadow-md focus:border-slate-200 p-1.5 rounded-md border hover:border-zinc-500 transition-all border-zinc-700 bg-slate-100 dark:bg-neutral-800 hover:bg-neutral-700"
-        v-model="props.valorInput"
+        :value="props.valorInput"
         :id="props.label"
         :type="props.type"
-        @focusin="({ target }) => lidarFocusInInput(target?.value)"
-        @focusout="({ target }) => lidarFocusOutInput(target?.value)"
-        @input="({ target }) => emit('atualizar:valorInput', lidarAtualizacaoInput(target?.value))"
+        @focusin="(event) => lidarFocusInInput((event.target as HTMLInputElement).value)"
+        @focusout="(event) => lidarFocusOutInput((event.target as HTMLInputElement).value)"
+        @input="
+          (event) => emit('atualizar:valorInput', (event.target as HTMLInputElement).value ?? '')
+        "
       />
     </label>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   label: {
@@ -41,8 +45,10 @@ const props = defineProps({
 const emit = defineEmits(['atualizar:valorInput'])
 
 const labelAcima = ref(false)
+const emFoco = ref(false)
 
 const lidarFocusInInput = (valor: string) => {
+  emFoco.value = true
   if (valor !== '') {
     return
   }
@@ -51,20 +57,19 @@ const lidarFocusInInput = (valor: string) => {
 }
 
 const lidarFocusOutInput = (valor: string) => {
+  emFoco.value = false
   if (valor !== '') {
     return
   }
 
   labelAcima.value = false
 }
-
-const lidarAtualizacaoInput = (valor: string) => {
-  if (valor === '') {
-    labelAcima.value = false
-  }
-  labelAcima.value = true
-  emit('atualizar:valorInput', props.valorInput)
-}
 </script>
 
-<style scoped></style>
+<style scoped>
+input {
+  @apply z-10 p-1.5 rounded-md border transition-all border-zinc-200 dark:border-zinc-700 dark:bg-neutral-800;
+  @apply focus:shadow-md focus:border-zinc-400;
+  @apply hover:border-zinc-500 hover:bg-slate-100 dark:hover:border-zinc-500 dark:hover:bg-neutral-700;
+}
+</style>
