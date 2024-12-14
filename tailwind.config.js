@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js,ts,jsx,tsx,vue}"],
-  darkMode: 'media',
+export default {
+  content: ['./src/**/*.{html,js,ts,jsx,tsx,vue}'],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -17,19 +17,25 @@ module.exports = {
           "'Fira Sans'",
           "'Droid Sans'",
           "'Helvetica Neue'",
-          'sans-serif'
-        ]
+          'sans-serif',
+        ],
       },
       colors: {
-        // Adicione as cores personalizadas
-        'background-light': '#f0f0f0', // Cor de fundo no modo claro
-        'background-dark': '#1a1a1a',  // Cor de fundo no modo escuro
+        mantis: {
+          50: '#f6faf3',
+          100: '#e9f5e3',
+          200: '#d3eac8',
+          300: '#afd89d',
+          400: '#82bd69',
+          500: '#61a146',
+          600: '#4c8435',
+          700: '#3d692c',
+          800: '#345427',
+          900: '#2b4522',
+          950: '#13250e',
+        },
       },
-      backgroundColor: {
-        // Defina as cores de fundo padrão
-        'background': '#f0f0f0', // Cor de fundo no modo claro
-      },
-    }
+    },
   },
   plugins: [],
 }

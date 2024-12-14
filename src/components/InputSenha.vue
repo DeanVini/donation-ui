@@ -1,8 +1,8 @@
 <template>
   <InputBase
-    type="text"
+    type="password"
     :label="props.label"
-    :valor-input="valorInput"
+    :valor-input="props.valorInput"
     @atualizar:valor-input="(valor: string) => emit('atualizar:valorInput', valor)"
   />
 </template>
@@ -16,10 +16,6 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  autocomplete: {
-    type: String,
-    default: null,
-  },
   valorInput: {
     type: String,
     default: '',
@@ -29,10 +25,8 @@ const props = defineProps({
 const emit = defineEmits(['atualizar:valorInput'])
 
 onMounted(() => {
-  if (props.autocomplete) {
-    const inputTexto: HTMLElement | null = document.getElementById(props.label)
-    inputTexto?.setAttribute('autocomplete', props.autocomplete)
-  }
+  const inputSenha: HTMLElement | null = document.getElementById(props.label)
+  inputSenha?.setAttribute('autocomplete', 'current-password')
 })
 </script>
 
