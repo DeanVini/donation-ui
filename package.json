@@ -17,7 +17,11 @@
   },
   "dependencies": {
     "@alasdair/eslint-plugin-max-len": "^1.1.0",
+    "@tanstack/vue-query": "^5.62.7",
+    "@tanstack/vue-query-devtools": "^5.62.7",
+    "@tanstack/vue-table": "^8.20.5",
     "@vueuse/core": "^12.0.0",
+    "axios": "^1.7.9",
     "eslint-plugin-deprecate": "^0.8.5",
     "eslint-plugin-electron-extension": "^1.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",

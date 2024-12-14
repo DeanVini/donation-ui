@@ -9,6 +9,7 @@
 
 <script setup lang="ts">
 import InputBase from '@/components/InputBase.vue'
+import { onMounted } from 'vue'
 
 const props = defineProps({
   label: {
@@ -22,6 +23,11 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['atualizar:valorInput'])
+
+onMounted(() => {
+  const inputSenha: HTMLElement | null = document.getElementById(props.label)
+  inputSenha?.setAttribute('autocomplete', 'current-password')
+})
 </script>
 
 <style scoped></style>
