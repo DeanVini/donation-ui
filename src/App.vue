@@ -6,8 +6,8 @@ import SelectModoEscuro from '@/components/SelectModoEscuro.vue'
 
 <template>
   <header>
-    <LoginUsuario />
     <SelectModoEscuro class="absolute" />
+    <RouterView />
   </header>
 </template>
 

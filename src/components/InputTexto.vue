@@ -24,6 +24,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  temErro: {
+    type: Boolean,
+    default: false,
+  },
 })
 
 const emit = defineEmits(['atualizar:valorInput'])
