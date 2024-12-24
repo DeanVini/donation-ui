@@ -1,6 +1,6 @@
-import api from '@/api/solidarix/instanciaAxios'
+import api from './axiosInstance'
 
-export async function autenticar(login: string, senha: string) {
+export async function auth(login: string, senha: string) {
   try {
     const resposta = await api.post('/login', { login, senha })
     return resposta.data || resposta

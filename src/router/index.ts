@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import LoginUsuario from '@/views/LoginUsuario.vue'
-import { useEstadoAutenticacao } from '@/composables/useEstadoAutenticacao'
+import { useAuthState } from '@/composables/useAuthState'
 
 function lazyLoadView(view: string) {
   return () => import(`../views/${view}.vue`)
@@ -29,10 +27,10 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const { usuarioLogado } = useEstadoAutenticacao()
-  if (to.meta.requiresAuth && !usuarioLogado.value) {
+  const { loggedUser } = useAuthState()
+  if (to.meta.requiresAuth && !loggedUser.value) {
     next({ path: '/login' })
-  } else if (to.path === '/login' && usuarioLogado.value) {
+  } else if (to.path === '/login' && loggedUser.value) {
     next({ path: '/' })
   } else {
     next()

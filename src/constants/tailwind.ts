@@ -2,12 +2,12 @@
 import tailwindConfig from '../../tailwind.config'
 import colors from 'tailwindcss/colors'
 
-const coresPersonalizadas = tailwindConfig.theme?.extend?.colors ?? {}
-const chavesCoresPadrao = Object.keys(colors)
-const chavesCoresPersonalizadas = Object.keys(coresPersonalizadas)
+const customColors = tailwindConfig.theme?.extend?.colors ?? {}
+const defaultColorKeys = Object.keys(colors)
+const customColorKeys = Object.keys(customColors)
 
-export const CORES_TAILWIND = [...chavesCoresPadrao, ...chavesCoresPersonalizadas] as const
-export const INTENSIDADES_TAILWIND = [
+export const TAILWIND_COLORS = [...defaultColorKeys, ...customColorKeys] as const
+export const TAILWIND_INTENSITIES = [
   50,
   100,
   200,
@@ -19,8 +19,8 @@ export const INTENSIDADES_TAILWIND = [
   800,
   900,
   950,
-  'transparente',
+  'transparent',
 ] as const
 
-export type CorTailwind = (typeof CORES_TAILWIND)[number]
-export type IntensidadesTailwind = (typeof INTENSIDADES_TAILWIND)[number]
+export type TailwindColor = (typeof TAILWIND_COLORS)[number]
+export type TailwindIntensities = (typeof TAILWIND_INTENSITIES)[number]
