@@ -1,66 +1,68 @@
 <template>
   <div class="w-full h-screen flex justify-center items-center transition-all">
-    <SecaoBase class="min-w-[50vh]">
+    <BaseSection class="min-w-[50vh]">
       <form
         class="w-full h-[80vh] flex items-center justify-center flex-col gap-6"
-        @submit.prevent="handleAutenticar()"
+        @submit.prevent="authHandler()"
       >
         <h1 class="mb-2">Login</h1>
         <transition name="fade">
-          <MensagemSistema v-if="error" class="mb-2" tipo="erro" :icone="XCircle">
+          <SystemMessage v-if="error" class="mb-2" type="error" :icon="XCircle">
             Usário ou senha inválidos
-          </MensagemSistema>
+          </SystemMessage>
         </transition>
-        <InputTexto
+        <TextInput
           label="Usuário"
           autocomplete="username"
-          :valor-input="formLogin.login"
-          :tem-erro="error"
-          @atualizar:valor-input="(valor: string) => (formLogin.login = valor)"
+          :model-value="loginForm.username"
+          :error="error"
+          @update:model-value="(value: string) => (loginForm.username = value)"
         />
-        <InputSenha
+        <PasswordInput
           label="Senha"
-          :valor-input="formLogin.senha"
-          @atualizar:valor-input="(valor: string) => (formLogin.senha = valor)"
+          :model-value="loginForm.password"
+          @update:model-value="(value: string) => (loginForm.password = value)"
         />
         <div class="mt-2">
-          <BotaoBase class="w-24 font-semibold" cor="mantis" tipo="solido">
-            <span v-if="isPending" class="flex justify-center"
-              ><LoaderCircle class="animate-spin"
-            /></span>
+          <BaseButton class="w-24 font-semibold" color="mantis" type="solid">
+            <span v-if="isPending" class="flex justify-center">
+              <LoaderCircle class="animate-spin" />
+            </span>
             <span v-else>Entrar</span>
-          </BotaoBase>
+          </BaseButton>
         </div>
       </form>
-    </SecaoBase>
+      {{ loginForm }}
+    </BaseSection>
   </div>
 </template>
 
 <script setup lang="ts">
-import InputTexto from '@/components/InputTexto.vue'
-import { ref } from 'vue'
-import InputSenha from '@/components/InputSenha.vue'
-import SecaoBase from '@/components/SecaoBase.vue'
-import BotaoBase from '@/components/BotaoBase.vue'
-import { useAutenticacao } from '@/hooks/useAutenticacao'
-import { useEstadoAutenticacao } from '@/composables/useEstadoAutenticacao'
+import TextInput from '@/components/TextInput.vue'
+import { onMounted, ref, watch } from 'vue'
+import PasswordInput from '@/components/PasswordInput.vue'
+import BaseSection from '@/components/BaseSection.vue'
+import BaseButton from '@/components/BaseButton.vue'
+import { useAuth } from '@/hooks/useAuth'
+import { useAuthState } from '@/composables/useAuthState'
 import router from '@/router'
 import { XCircle, LoaderCircle } from 'lucide-vue-next'
-import MensagemSistema from '@/components/MensagemSistema.vue'
+import SystemMessage from '@/components/SystemMessage.vue'
 
-const formLogin = ref({
-  login: '',
-  senha: '',
+const loginForm = ref({
+  username: '',
+  password: '',
 })
 
-const { mutate, error, isPending } = useAutenticacao()
-const { salvarToken } = useEstadoAutenticacao()
-const handleAutenticar = () => {
+const { mutate, error, isPending } = useAuth()
+const { saveToken } = useAuthState()
+
+const authHandler = () => {
   mutate(
-    { login: formLogin.value.login, senha: formLogin.value.senha },
+    { login: loginForm.value.username, senha: loginForm.value.password },
     {
       onSuccess: (token) => {
-        salvarToken(token)
+        saveToken(token)
         router.push('/')
       },
       onError: (error) => {

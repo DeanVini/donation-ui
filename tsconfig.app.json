@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/constants/**/*" , "src/composables/**/*" ],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.ts", "src/**/*.d.ts", "src/hooks/**/*","src/constants/**/*", "src/services/**/*", ",src/composables/**/*" ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,

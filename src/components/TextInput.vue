@@ -1,14 +1,14 @@
 <template>
-  <InputBase
+  <BaseInput
     type="text"
     :label="props.label"
-    :valor-input="valorInput"
-    @atualizar:valor-input="(valor: string) => emit('atualizar:valorInput', valor)"
+    :model-value="props.modelValue"
+    @update:model-value="(valor: string) => emit('update:modelValue', valor)"
   />
 </template>
 
 <script setup lang="ts">
-import InputBase from '@/components/InputBase.vue'
+import BaseInput from '@/components/BaseInput.vue'
 import { onMounted } from 'vue'
 
 const props = defineProps({
@@ -20,22 +20,22 @@ const props = defineProps({
     type: String,
     default: null,
   },
-  valorInput: {
+  modelValue: {
     type: String,
     default: '',
   },
-  temErro: {
+  error: {
     type: Boolean,
     default: false,
   },
 })
 
-const emit = defineEmits(['atualizar:valorInput'])
+const emit = defineEmits(['update:modelValue'])
 
 onMounted(() => {
   if (props.autocomplete) {
-    const inputTexto: HTMLElement | null = document.getElementById(props.label)
-    inputTexto?.setAttribute('autocomplete', props.autocomplete)
+    const textInput: HTMLElement | null = document.getElementById(props.label)
+    textInput?.setAttribute('autocomplete', props.autocomplete)
   }
 })
 </script>
