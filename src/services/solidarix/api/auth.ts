@@ -1,9 +1,9 @@
 import api from './axiosInstance'
 
-export async function auth(login: string, senha: string) {
+export async function auth(username: string, password: string) {
   try {
-    const resposta = await api.post('/login', { login, senha })
-    return resposta.data || resposta
+    const response = await api.post('/login', { username, password })
+    return response.data || response
   } catch (erro: any) {
     throw new Error(erro.response.data.mensagem || 'Erro ao fazer login na API')
   }

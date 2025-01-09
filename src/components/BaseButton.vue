@@ -12,11 +12,13 @@
   </button>
 </template>
 <script setup lang="ts">
-// @ts-ignore
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import tailwindConfig from '../../tailwind.config'
 import colors from 'tailwindcss/colors'
-import { computed, onMounted, type PropType, ref } from 'vue'
-import type { TailwindColor, TailwindIntensities } from '@/constants/tailwind'
+import { computed, type PropType, ref } from 'vue'
+import type { TailwindIntensities } from '@/constants/tailwind'
 import { TAILWIND_COLORS } from '@/constants/tailwind'
 
 const props = defineProps({
