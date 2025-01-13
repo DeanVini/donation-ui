@@ -88,6 +88,50 @@ export default {
           950: '#092f43',
         },
       },
+      keyframes: {
+        'slide-up': {
+          from: { opacity: '0', transform: 'translateY(-10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-down': {
+          from: { opacity: '0', transform: 'translateY(10px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        'slide-left': {
+          from: { opacity: '0', transform: 'translateX(-10px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-right': {
+          from: { opacity: '0', transform: 'translateX(10px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        'slide-up-reverse': {
+          from: { opacity: '1', transform: 'translateY(0)' },
+          to: { opacity: '0', transform: 'translateY(-10px)' },
+        },
+        'slide-down-reverse': {
+          from: { opacity: '1', transform: 'translateY(0)' },
+          to: { opacity: '0', transform: 'translateY(10px)' },
+        },
+        'slide-left-reverse': {
+          from: { opacity: '1', transform: 'translateX(0)' },
+          to: { opacity: '0', transform: 'translateX(-10px)' },
+        },
+        'slide-right-reverse': {
+          from: { opacity: '1', transform: 'translateX(0)' },
+          to: { opacity: '0', transform: 'translateX(10px)' },
+        },
+      },
+      animation: {
+        'slide-up': 'slide-up 0.3s ease-out forwards',
+        'slide-down': 'slide-down 0.3s ease-out forwards',
+        'slide-left': 'slide-left 0.3s ease-out forwards',
+        'slide-right': 'slide-right 0.3s ease-out forwards',
+        'slide-up-reverse': 'slide-up-reverse 0.3s ease-in forwards',
+        'slide-down-reverse': 'slide-down-reverse 0.3s ease-in forwards',
+        'slide-left-reverse': 'slide-left-reverse 0.3s ease-in forwards',
+        'slide-right-reverse': 'slide-right-reverse 0.3s ease-in forwards',
+      },
     },
   },
   plugins: [],

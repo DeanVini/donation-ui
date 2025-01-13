@@ -12,6 +12,7 @@ const loginForm = {
   unknownError: 'Erro desconhecido, tente novamente mais tarde',
   useSingleSignOn: 'Usar login único',
   logIn: 'Entrar',
+  loginSuccess: 'Logado com sucesso',
 }
 
 export default {

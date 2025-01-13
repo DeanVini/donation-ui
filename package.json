@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@alasdair/eslint-plugin-max-len": "^1.1.0",
+    "@floating-ui/vue": "^1.1.6",
     "@tanstack/vue-query": "^5.62.7",
     "@tanstack/vue-query-devtools": "^5.62.7",
     "@tanstack/vue-table": "^8.20.5",

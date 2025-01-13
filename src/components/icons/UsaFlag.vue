@@ -1,7 +1,8 @@
 <template>
   <svg
+    class="scale-y-[132%]"
     :width="props.size"
-    height="max"
+    height="100%"
     viewBox="0 0 7410 3900"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -40,12 +41,12 @@
 </template>
 
 <script setup lang="ts">
-const props = {
+const props = defineProps({
   size: {
     type: String,
     default: '50',
   },
-}
+})
 </script>
 
 <style scoped></style>

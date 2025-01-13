@@ -10,8 +10,7 @@ export default [
   },
   {
     language: 'en',
-    country: 'usa',
     name: 'English',
     icon: UsaFlag,
-  },
-] as const
+  } as const,
+]
