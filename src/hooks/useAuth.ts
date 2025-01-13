@@ -4,6 +4,7 @@ import { auth } from '@/services/solidarix/api/auth'
 
 export function useAuth(): UseMutationReturnType<any, any, any, any> {
   return useMutation({
-    mutationFn: ({ login, senha }: { login: string; senha: string }) => auth(login, senha),
+    mutationFn: ({ username, password }: { username: string; password: string }) =>
+      auth(username, password),
   })
 }

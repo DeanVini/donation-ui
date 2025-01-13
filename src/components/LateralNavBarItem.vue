@@ -23,7 +23,7 @@ const props = defineProps({
   item: {
     type: Object as PropType<{
       label: string
-      icone: object
+      icon: object
       link: string
     }>,
   },

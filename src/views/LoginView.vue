@@ -5,21 +5,21 @@
         class="w-full h-[80vh] flex items-center justify-center flex-col gap-6"
         @submit.prevent="authHandler()"
       >
-        <h1 class="mb-2">Login</h1>
+        <h1 class="mb-2">CareOn</h1>
         <transition name="fade">
           <SystemMessage v-if="error" class="mb-2" type="error" :icon="XCircle">
-            Usário ou senha inválidos
+            {{ t('invalidPasswordOrUsername') }}
           </SystemMessage>
         </transition>
         <TextInput
-          label="Usuário"
+          :label="t('emailOrUsername')"
           autocomplete="username"
           :model-value="loginForm.username"
           :error="error"
           @update:model-value="(value: string) => (loginForm.username = value)"
         />
         <PasswordInput
-          label="Senha"
+          :label="t('password')"
           :model-value="loginForm.password"
           @update:model-value="(value: string) => (loginForm.password = value)"
         />
@@ -28,18 +28,17 @@
             <span v-if="isPending" class="flex justify-center">
               <LoaderCircle class="animate-spin" />
             </span>
-            <span v-else>Entrar</span>
+            <span v-else>{{ t('logIn') }}</span>
           </BaseButton>
         </div>
       </form>
-      {{ loginForm }}
     </BaseSection>
   </div>
 </template>
 
 <script setup lang="ts">
 import TextInput from '@/components/TextInput.vue'
-import { onMounted, ref, watch } from 'vue'
+import { ref } from 'vue'
 import PasswordInput from '@/components/PasswordInput.vue'
 import BaseSection from '@/components/BaseSection.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -48,6 +47,9 @@ import { useAuthState } from '@/composables/useAuthState'
 import router from '@/router'
 import { XCircle, LoaderCircle } from 'lucide-vue-next'
 import SystemMessage from '@/components/SystemMessage.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const loginForm = ref({
   username: '',
@@ -59,14 +61,14 @@ const { saveToken } = useAuthState()
 
 const authHandler = () => {
   mutate(
-    { login: loginForm.value.username, senha: loginForm.value.password },
+    { username: loginForm.value.username, password: loginForm.value.password },
     {
       onSuccess: (token) => {
         saveToken(token)
         router.push('/')
       },
       onError: (error) => {
-        console.error('Erro ao fazer login:', error)
+        console.error(t('serverConnectionFailed'), error)
       },
     },
   )

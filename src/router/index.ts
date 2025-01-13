@@ -21,7 +21,7 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      component: lazyLoadView('LoginUsuario'),
+      component: lazyLoadView('LoginView'),
     },
   ],
 })
