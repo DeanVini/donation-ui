@@ -1,7 +1,9 @@
 <template>
   <DropdownContainer>
     <template #activator>
-      <component :is="getLocaleIcon(locale)" size="25" />
+      <div>
+        <component :is="getLocaleIcon(locale)" size="25" />
+      </div>
     </template>
     <template #content>
       <div class="flex gap-2">

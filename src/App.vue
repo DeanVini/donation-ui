@@ -1,7 +1,7 @@
 <template>
   <header>
-    <DarkModeToggle class="w-fit" />
     <div class="absolute flex gap-4 p-3">
+      <DarkModeToggle class="w-fit" />
       <LanguageSelector />
     </div>
     <RouterView />
