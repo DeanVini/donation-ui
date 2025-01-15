@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthState } from '@/composables/useAuthState'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 
 function lazyLoadView(view: string) {
   return () => import(`../views/${view}.vue`)
@@ -16,7 +17,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: lazyLoadView('HomeView'),
-      meta: { requiresAuth: true },
+      meta: { requiresAuth: true, layout: DefaultLayout },
     },
     {
       path: '/login',

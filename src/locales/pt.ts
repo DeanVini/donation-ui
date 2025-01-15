@@ -1,6 +1,6 @@
 const loginForm = {
   emailOrUsername: 'Usuário',
-  logInToCareOn: 'Logain',
+  logInToCareOn: 'Entrar no careon',
   invalidEmailOrUsername: 'Nome de usuário inválido',
   invalidPassword: 'Senha inválida',
   invalidPasswordOrUsername: 'Usário ou senha inválidos',
@@ -15,6 +15,18 @@ const loginForm = {
   loginSuccess: 'Logado com sucesso',
 }
 
+const entities = {
+  people: 'Pessoas',
+  addresses: 'Endereços',
+  services: 'Serviços',
+  users: 'Usuarios',
+  person: 'Pessoa',
+  address: 'Endereço',
+  service: 'Serviço',
+  user: 'Usuario',
+}
+
 export default {
   ...loginForm,
+  ...entities,
 }

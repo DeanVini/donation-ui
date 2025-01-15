@@ -6,13 +6,6 @@
       Home
     </div>
   </div>
-  <div class="flex relative flex-col gap-2 w-full">
-    <div class="absolute w-[2.5px] h-full rounded"></div>
-    <div class="p-1 ml-3 flex gap-3">
-      <House :size="21" />
-      Home
-    </div>
-  </div>
 </template>
 
 <script setup lang="ts">

@@ -1,6 +1,8 @@
 <template>
   <div class="flex flex-col">
-    <LateralNavBarItem />
+    <div>
+      <LateralNavBarItem />
+    </div>
   </div>
 </template>
 

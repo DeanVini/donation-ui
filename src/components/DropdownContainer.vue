@@ -110,7 +110,7 @@ onBeforeUnmount(() => {
 const arrowTransform = computed(() => {
   switch (placement.value) {
     case 'top':
-      return 'translate-x-[-50%] translate-y-[50%] rotate-45'
+      return ' translate-y-[285%] rotate-45'
     case 'bottom':
       return 'translate-y-[-145%] rotate-45'
     case 'left':
