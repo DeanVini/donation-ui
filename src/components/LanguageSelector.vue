@@ -1,7 +1,7 @@
 <template>
-  <DropdownContainer>
+  <DropdownContainer class="flex items-center">
     <template #activator>
-      <div>
+      <div class="flex items-center">
         <component :is="getLocaleIcon(locale)" size="25" />
       </div>
     </template>

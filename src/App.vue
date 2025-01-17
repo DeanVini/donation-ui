@@ -1,8 +1,9 @@
 <template>
   <header>
-    <component :is="layout">
+    <component v-if="layout" :is="layout">
       <RouterView />
     </component>
+    <RouterView v-else />
   </header>
 </template>
 

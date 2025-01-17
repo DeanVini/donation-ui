@@ -1,11 +1,15 @@
 <template>
-  <div class="w-full h-full relative">
+  <div class="w-full h-full relative r">
     <div class="absolute flex gap-4 p-4 w-full items-center justify-end">
       <DarkModeToggle class="w-fit" />
       <LanguageSelector />
     </div>
-    <LateralNavBar />
-    <RouterView />
+    <div class="w-full flex">
+      <div class="w-fit">
+        <LateralNavBar />
+      </div>
+      <RouterView />
+    </div>
   </div>
 </template>
 

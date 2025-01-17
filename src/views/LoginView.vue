@@ -24,7 +24,7 @@
           @update:model-value="(value: string) => (loginForm.password = value)"
         />
         <div class="mt-2">
-          <BaseButton class="w-24 font-semibold" color="mantis" type="solid">
+          <BaseButton class="w-24 font-semibold" color="mantis" type="solid" :disabled="isPending">
             <span v-if="isPending" class="flex justify-center">
               <LoaderCircle class="animate-spin" />
             </span>

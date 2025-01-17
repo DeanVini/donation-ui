@@ -19,14 +19,21 @@ const entities = {
   people: 'Pessoas',
   addresses: 'Endereços',
   services: 'Serviços',
+  families: 'Famílias',
   users: 'Usuarios',
   person: 'Pessoa',
   address: 'Endereço',
   service: 'Serviço',
   user: 'Usuario',
+  family: 'Familia',
+}
+
+const general = {
+  home: 'Home',
 }
 
 export default {
   ...loginForm,
   ...entities,
+  ...general,
 }

@@ -1,16 +1,24 @@
-import { FileUser, House } from 'lucide-vue-next'
-import { useI18n } from 'vue-i18n'
+import { Boxes, FileUser, House, MapPinned } from 'lucide-vue-next'
 
-const { t } = useI18n()
-export const NAV_ITENS = [
+export const NAV_ITEMS = [
   {
-    label: 'Home',
-    link: '/',
+    i18nKey: 'home',
+    path: '/',
     icon: House,
   },
   {
-    label: t('people'),
-    link: '/person',
+    i18nKey: 'people',
+    path: '/person',
     icon: FileUser,
+  },
+  {
+    i18nKey: 'addresses',
+    path: '/address',
+    icon: MapPinned,
+  },
+  {
+    i18nKey: 'service',
+    path: '/service',
+    icon: Boxes,
   },
 ] as const
