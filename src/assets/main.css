@@ -1,11 +1,13 @@
+@import "@/assets/animations/dropdown.css";
+@import "@/assets/animations/fade.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-gray-200 text-slate-900 transition-colors;
-    @apply dark:bg-neutral-900 dark:text-slate-200;
+    @apply bg-gray-200 text-slate-900 ;
+    @apply dark:bg-neutral-900 dark:text-slate-200 ;
   }
   h1 {
     @apply text-3xl font-bold;
@@ -20,3 +22,4 @@
     @apply focus:outline-none;
   }
 }
+

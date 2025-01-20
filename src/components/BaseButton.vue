@@ -1,6 +1,8 @@
 <template>
   <button
     :class="{
+      '!bg-neutral-500/50 !text-neutral-200 !border-neutral-500/50 hover:!-translate-y-[0px] hover:!brightness-100 !cursor-not-allowed':
+        props.disabled,
       'hover:brightness-110 ': props.type === 'solid',
       'dark:!bg-transparent hover:brightness-95 ': props.type === 'light',
     }"
@@ -12,7 +14,6 @@
   </button>
 </template>
 <script setup lang="ts">
-
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import tailwindConfig from '../../tailwind.config'
@@ -37,6 +38,10 @@ const props = defineProps({
   secondaryIntensity: {
     type: Number as PropType<TailwindIntensities>,
     default: null,
+  },
+  disabled: {
+    type: Boolean,
+    default: true,
   },
 })
 
