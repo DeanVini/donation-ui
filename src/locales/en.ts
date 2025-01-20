@@ -17,6 +17,25 @@ const loginForm = {
   loginSuccess: 'Successfully logged in',
 }
 
+const entities = {
+  people: 'People',
+  addresses: 'Addresses',
+  services: 'Services',
+  families: 'Families',
+  users: 'Users',
+  person: 'Person',
+  address: 'Address',
+  service: 'Service',
+  user: 'User',
+  family: 'Family',
+}
+
+const general = {
+  home: 'Home',
+}
+
 export default {
   ...loginForm,
+  ...entities,
+  ...general,
 }

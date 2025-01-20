@@ -52,7 +52,6 @@ router.beforeEach((to, from, next) => {
   const { loggedUser } = useAuthState()
   const routerStore = useRouterStore()
   routerStore.setCurrentRoute(to.path)
-  console.log(routerStore.currentRoute)
   if (to.meta.requiresAuth && !loggedUser.value) {
     next({ path: '/login' })
   } else if (to.path === '/login' && loggedUser.value) {

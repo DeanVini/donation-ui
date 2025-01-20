@@ -105,6 +105,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside)
+  window.removeEventListener('resize', updatePosition)
 })
 
 const arrowTransform = computed(() => {
@@ -122,32 +123,3 @@ const arrowTransform = computed(() => {
   }
 })
 </script>
-
-<style scoped>
-.dropdown-enter-active,
-.dropdown-leave-active {
-  transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
-}
-
-.dropdown-enter-from {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-
-.dropdown-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.dropdown-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.dropdown-leave-to {
-  opacity: 0;
-  transform: translateY(-10px);
-}
-</style>

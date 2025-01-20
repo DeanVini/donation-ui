@@ -17,7 +17,7 @@ export const NAV_ITEMS = [
     icon: MapPinned,
   },
   {
-    i18nKey: 'service',
+    i18nKey: 'services',
     path: '/service',
     icon: Boxes,
   },

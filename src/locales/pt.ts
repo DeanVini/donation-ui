@@ -29,7 +29,7 @@ const entities = {
 }
 
 const general = {
-  home: 'Home',
+  home: 'Início',
 }
 
 export default {
