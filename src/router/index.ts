@@ -36,7 +36,7 @@ const router = createRouter({
     {
       path: '/address',
       name: 'address',
-      component: lazyLoadView('HomeView'),
+      component: lazyLoadView('AddressList'),
       meta: { requiresAuth: true, layout: DefaultLayout },
     },
     {

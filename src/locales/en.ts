@@ -34,8 +34,25 @@ const general = {
   home: 'Home',
 }
 
+const address = {
+  street: 'Street',
+  postalCode: 'Postal Code',
+  neighborhood: 'Neighborhood',
+  city: 'City',
+  state: 'State',
+  additionalInfo: 'Additional Infos',
+}
+
+const crud = {
+  create: 'Add',
+  edit: 'Edit',
+  delete: 'Delete',
+}
+
 export default {
   ...loginForm,
   ...entities,
   ...general,
+  ...address,
+  ...crud,
 }

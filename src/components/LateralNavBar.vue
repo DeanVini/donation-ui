@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-[5rem] hover:max-w-[14rem] transition-all border h-full pr-4 rounded-lg p-2 pt-0 border-slate-900 dark:border-gray-200"
+    class="max-w-[5rem] hover:max-w-[14rem] transition-all border h-full pr-4 rounded-lg p-2 pt-0 border-slate-900 dark:border-gray-200 backdrop-blur-md"
     @mouseover="showName = true"
     @mouseleave="showName = false"
   >

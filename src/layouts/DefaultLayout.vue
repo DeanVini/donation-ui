@@ -1,14 +1,14 @@
 <template>
   <div class="w-full h-full">
-    <div class="flex gap-4 p-4 w-full items-center justify-end absolute w-full z-10">
+    <div class="flex gap-4 p-4 w-full items-center justify-end absolute z-10">
       <DarkModeToggle class="w-fit max-w-18" />
       <LanguageSelector />
     </div>
     <div class="w-full flex relative">
-      <div class="w-fit absolute h-full" ref="navBarRef">
+      <div class="w-fit absolute h-full z-40" ref="navBarRef">
         <LateralNavBar />
       </div>
-      <div :style="{ marginLeft: navBarWidth + 'px' }" class="w-full">
+      <div :style="{ marginLeft: navBarWidth + 'px' }" class="w-full min-h-screen">
         <RouterView />
       </div>
     </div>

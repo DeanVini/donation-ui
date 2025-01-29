@@ -28,12 +28,30 @@ const entities = {
   family: 'Familia',
 }
 
+const address = {
+  street: 'Rua',
+  postalCode: 'Cep',
+  neighborhood: 'Bairro',
+  city: 'Cidade',
+  state: 'Estado',
+  number: 'Numero',
+  additionalInfo: 'Informações adicionais',
+}
+
 const general = {
   home: 'Início',
+}
+
+const crud = {
+  create: 'Cadastrar',
+  edit: 'Editar',
+  delete: 'Excluir',
 }
 
 export default {
   ...loginForm,
   ...entities,
   ...general,
+  ...address,
+  ...crud,
 }
