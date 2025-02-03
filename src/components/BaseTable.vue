@@ -15,7 +15,7 @@
       </thead>
       <tbody class="rounded-lg">
         <tr v-if="props.loading" class="table-body bg-default">
-          <td v-for="column in props.columns.length">
+          <td v-for="column in props.columns.length" :key="column">
             <div class="animate-pulse flex">
               <div class="h-[2rem] w-2/4 bg-gray-100/40 dark:bg-neutral-800"></div>
             </div>
