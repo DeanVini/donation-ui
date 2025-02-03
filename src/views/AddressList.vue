@@ -2,12 +2,7 @@
   <div class="w-full h-full py-14 px-10 flex flex-col gap-10">
     <header class="w-full flex justify-between items-center">
       <h2>{{ t('addresses') }}</h2>
-      <BaseButton
-        color="neutral"
-        :main-intensity="100"
-        :secondary-intensity="500"
-        @click="addAddressModalStateHandler()"
-      >
+      <BaseButton color="medium-purple" @click="addAddressModalStateHandler()">
         {{ `${t('create')} ${t('address')}` }}
       </BaseButton>
     </header>

@@ -1,9 +1,14 @@
 <template>
   <div class="relative overflow-x-auto">
-    <table class="w-full text-left table-auto border-spacing-y-2">
+    <table class="w-full text-left table-auto border-spacing-y-2 border-default">
       <thead>
         <tr>
-          <th v-for="column in columns" scope="col" class="font-medium opacity-[60%] pb-1">
+          <th
+            v-for="column in columns"
+            :key="column"
+            scope="col"
+            class="font-medium opacity-[60%] pb-1"
+          >
             {{ column.toUpperCase() }}
           </th>
         </tr>
@@ -25,7 +30,7 @@
 <script setup lang="ts">
 const props = defineProps({
   columns: {
-    type: Array<String>,
+    type: Array<string>,
     required: true,
   },
   loading: {

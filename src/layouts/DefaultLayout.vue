@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full">
-    <div class="flex gap-4 p-4 w-full items-center justify-end absolute z-10">
+    <div class="flex gap-4 px-10 py-4 w-full items-center justify-end absolute z-10">
       <DarkModeToggle class="w-fit max-w-18" />
       <LanguageSelector />
     </div>

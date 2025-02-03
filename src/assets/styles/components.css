@@ -1,7 +1,11 @@
 @layer components {
+  .border-default {
+    @apply dark:border-slate-200 border-slate-900
+  }
+
   .bg-default{
-    @apply bg-gray-200 text-slate-900 border-slate-900 ;
-    @apply dark:bg-neutral-900 dark:text-slate-200 dark:border-slate-200 ;
+    @apply bg-gray-200 text-slate-900 border-default ;
+    @apply dark:bg-neutral-900 dark:text-slate-200 ;
   }
 
   .table-body {

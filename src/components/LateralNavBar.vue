@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-[5rem] hover:max-w-[14rem] transition-all border h-full pr-4 rounded-lg p-2 pt-0 border-slate-900 dark:border-gray-200 backdrop-blur-md"
+    class="max-w-[5rem] hover:max-w-[14rem] transition-all border h-full pr-4 rounded-lg p-2 pt-0 border-default backdrop-blur-md"
     @mouseover="showName = true"
     @mouseleave="showName = false"
   >
@@ -10,10 +10,7 @@
         <h2 v-else>C</h2>
       </transition>
     </div>
-    <nav
-      aria-label="Main Navigation"
-      class="flex flex-col gap-2 border-t pt-4 border-slate-900 dark:border-gray-200"
-    >
+    <nav aria-label="Main Navigation" class="flex flex-col gap-2 border-t pt-4 border-default">
       <div v-for="item in NAV_ITEMS" :key="item.path">
         <LateralNavBarItem :item="item" :show-name="showName" />
       </div>
