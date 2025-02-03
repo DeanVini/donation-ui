@@ -6,7 +6,7 @@
       'hover:brightness-110 ': props.type === 'solid',
       'dark:!bg-transparent hover:brightness-95 ': props.type === 'light',
     }"
-    class="p-1 rounded-md border bg-opacity-20 ease-in-out duration-300 hover:-translate-y-[3px] hover:shadow-md"
+    class="p-1 rounded-md border bg-opacity-20 ease-in-out duration-300 hover:-translate-y-[3px] hover:shadow-md px-2"
     :style="getButtonStyle()"
     @mouseover="mainColor = 'black'"
   >

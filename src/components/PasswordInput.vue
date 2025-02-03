@@ -1,15 +1,12 @@
 <template>
-  <BaseInput
-    type="password"
-    :label="props.label"
-    :model-value="props.modelValue"
-    @update:model-value="(valor: string) => emit('update:modelValue', valor)"
-  />
+  <BaseInput type="password" :label="props.label" v-model="value" />
 </template>
 
 <script setup lang="ts">
 import BaseInput from '@/components/BaseInput.vue'
-import { onMounted } from 'vue'
+import { type ModelRef, onMounted } from 'vue'
+
+const value: ModelRef<undefined, string> = defineModel()
 
 const props = defineProps({
   label: {
@@ -21,8 +18,6 @@ const props = defineProps({
     default: '',
   },
 })
-
-const emit = defineEmits(['update:modelValue'])
 
 onMounted(() => {
   const passwordInput: HTMLElement | null = document.getElementById(props.label)

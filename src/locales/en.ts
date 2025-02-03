@@ -30,16 +30,13 @@ const entities = {
   family: 'Family',
 }
 
-const general = {
-  home: 'Home',
-}
-
 const address = {
   street: 'Street',
   postalCode: 'Postal Code',
   neighborhood: 'Neighborhood',
   city: 'City',
   state: 'State',
+  number: 'Number',
   additionalInfo: 'Additional Infos',
 }
 
@@ -49,10 +46,22 @@ const crud = {
   delete: 'Delete',
 }
 
+const validation = {
+  requiredField: 'Some required field is empty',
+  invalidEmail: 'Invalid email',
+}
+
+const general = {
+  home: 'Home',
+  confirm: 'Confirm',
+  cancel: 'Cancel',
+}
+
 export default {
   ...loginForm,
   ...entities,
   ...general,
   ...address,
   ...crud,
+  ...validation,
 }

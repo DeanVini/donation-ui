@@ -1,4 +1,4 @@
-import type { Address } from '@/interfaces/addressInterface'
+import type { Address, AddressInput } from '@/interfaces/addressInterface'
 import { useInjector } from '@/composables/useInjector'
 
 export default function useAddressService() {
@@ -7,5 +7,9 @@ export default function useAddressService() {
     return useInjector().get().setRoute(baseRoute).execute()
   }
 
-  return { getAll }
+  const postAddress = async (data: AddressInput): Promise<Address[]> => {
+    return useInjector().post().setRoute(baseRoute).setData(data).execute()
+  }
+
+  return { getAll, postAddress }
 }

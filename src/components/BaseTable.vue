@@ -9,13 +9,10 @@
         </tr>
       </thead>
       <tbody class="rounded-lg">
-        <tr
-          v-if="props.loading"
-          class="border-gray-100 last:border-none even:bg-gray-100 even:bg-opacity-20"
-        >
-          <td v-for="column in props.columns.length + 1" class="px-4 py-4">
-            <div class="animate-pulse flex space-x-4">
-              <div class="h-2 w-2/4 bg-gray-100 rounded"></div>
+        <tr v-if="props.loading" class="table-body bg-default">
+          <td v-for="column in props.columns.length">
+            <div class="animate-pulse flex">
+              <div class="h-[2rem] w-2/4 bg-gray-100/40 dark:bg-neutral-800"></div>
             </div>
           </td>
         </tr>

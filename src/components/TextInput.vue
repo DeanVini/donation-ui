@@ -1,15 +1,10 @@
 <template>
-  <BaseInput
-    type="text"
-    :label="props.label"
-    :model-value="props.modelValue"
-    @update:model-value="(valor: string) => emit('update:modelValue', valor)"
-  />
+  <BaseInput v-model="value" type="text" :label="props.label" />
 </template>
 
 <script setup lang="ts">
 import BaseInput from '@/components/BaseInput.vue'
-import { onMounted } from 'vue'
+import { type ModelRef, onMounted } from 'vue'
 
 const props = defineProps({
   label: {
@@ -30,7 +25,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['update:modelValue'])
+const value: ModelRef<undefined, string> = defineModel()
 
 onMounted(() => {
   if (props.autocomplete) {

@@ -38,14 +38,21 @@ const address = {
   additionalInfo: 'Informações adicionais',
 }
 
-const general = {
-  home: 'Início',
-}
-
 const crud = {
   create: 'Cadastrar',
   edit: 'Editar',
   delete: 'Excluir',
+}
+
+const validation = {
+  requiredField: 'Algum campo obrigatório está vazio',
+  invalidEmail: 'E-mail inválido',
+}
+
+const general = {
+  home: 'Início',
+  confirm: 'Confirmar',
+  cancel: 'Cancelar',
 }
 
 export default {

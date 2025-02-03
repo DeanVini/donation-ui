@@ -14,15 +14,10 @@
         <TextInput
           :label="t('emailOrUsername')"
           autocomplete="username"
-          :model-value="loginForm.username"
+          v-model="loginForm.username"
           :error="error"
-          @update:model-value="(value: string) => (loginForm.username = value)"
         />
-        <PasswordInput
-          :label="t('password')"
-          :model-value="loginForm.password"
-          @update:model-value="(value: string) => (loginForm.password = value)"
-        />
+        <PasswordInput :label="t('password')" v-model="loginForm.password" />
         <div class="mt-2">
           <BaseButton class="w-24 font-semibold" color="mantis" type="solid" :disabled="isPending">
             <span v-if="isPending" class="flex justify-center">
