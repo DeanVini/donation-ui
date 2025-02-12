@@ -4,8 +4,8 @@
     @mouseover="showName = true"
     @mouseleave="showName = false"
   >
-    <div class="flex justify-center items-center p-4">
-      <transition name="fade" mode="out-in">
+    <div class="flex justify-center items-center p-4 min-h-[4rem] min-w-[3rem]">
+      <transition name="fade-in-out" mode="out-in" :duration="150">
         <h2 v-if="showName">CareOn</h2>
         <h2 v-else>C</h2>
       </transition>

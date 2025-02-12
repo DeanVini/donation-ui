@@ -7,10 +7,11 @@
 
 <script setup lang="ts">
 import type { PropType, Component } from 'vue'
+import type { MessageStatus } from '@/constants/messageStatus'
 
 const props = defineProps({
   type: {
-    type: String as PropType<'error' | 'info' | 'success' | 'alert' | 'contrast' | 'neutral'>,
+    type: String as PropType<MessageStatus>,
     default: 'contrast',
   },
   icon: {

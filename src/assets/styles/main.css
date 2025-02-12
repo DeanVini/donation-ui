@@ -1,5 +1,4 @@
-@import "@/assets/animations/dropdown.css";
-@import "@/assets/animations/fade.css";
+@import "@/assets/animations/index.css";
 @import "@/assets/styles/components.css";
 @tailwind base;
 @tailwind components;
