@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthState } from '@/composables/useAuthState'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import NoAuthLayout from '@/layouts/NoAuthLayout.vue'
-import { useRouterStore } from '@/stores/router'
+import { useRouterStore } from '@/stores/useRouterStore'
 
 function lazyLoadView(view: string) {
   return () => import(`../views/${view}.vue`)

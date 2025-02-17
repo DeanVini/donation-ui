@@ -47,8 +47,15 @@ const crud = {
 }
 
 const validation = {
-  requiredField: 'Some required field is empty',
-  invalidEmail: 'Invalid email',
+  error: {
+    requiredField: 'The fields {fields} are required | The field {fields} is required',
+    invalidEmail: 'Invalid email',
+    register: 'Error while registering',
+  },
+  success: {
+    success: 'Success',
+    register: 'Successfully registered',
+  },
 }
 
 const general = {

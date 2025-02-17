@@ -45,8 +45,15 @@ const crud = {
 }
 
 const validation = {
-  requiredField: 'Algum campo obrigatório está vazio',
-  invalidEmail: 'E-mail inválido',
+  error: {
+    requiredField: 'Os campos {fields} são obrigatórios | O Campo {fields} é obrigatório',
+    invalidEmail: 'E-mail inválido',
+    register: 'Erro ao cadastrar',
+  },
+  success: {
+    success: 'Sucesso',
+    register: 'Cadastrado com sucesso',
+  },
 }
 
 const general = {
@@ -61,4 +68,5 @@ export default {
   ...general,
   ...address,
   ...crud,
+  ...validation,
 }

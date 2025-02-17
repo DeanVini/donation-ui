@@ -71,12 +71,13 @@ import { reactive } from 'vue'
 import { useAddressMutation } from '@/hooks/address/useAddressMutation'
 import { LoaderCircle } from 'lucide-vue-next'
 import type { AddressInput } from '@/interfaces/addressInterface'
-import { Field } from 'vee-validate'
 import * as yup from 'yup'
+import { useToaster } from '@/composables/useToaster'
 
 const { postAddress } = useAddressMutation()
-const { mutate, error, isPending } = postAddress()
+const { mutate, isPending } = postAddress()
 const { t } = useI18n()
+const toaster = useToaster()
 
 const modalState = defineModel({
   type: Boolean,
@@ -100,13 +101,31 @@ const schema = yup.object().shape({
   street: yup.string().required(),
 })
 
-const addAddress = async () => {
-  if (!schema.isValidSync(addressData)) {
-    return
-  }
+const getErrorMessage = (fields: (string | undefined)[]) => {
+  const translatedFields = fields.map((field) => t(field ?? ''))
+  const plural = translatedFields.length > 1 ? 1 : 0
+  return t('error.requiredField', { fields: translatedFields.join(', ') }, plural)
+}
 
-  mutate(addressData)
-  modalState.value = false
+const addAddress = async () => {
+  try {
+    await schema.validate(addressData, { abortEarly: false })
+    mutate(addressData)
+    toaster.success(t('success.success'), `${t('address')} ${t('success.register').toLowerCase()}`)
+    modalState.value = false
+  } catch (err) {
+    if (err instanceof yup.ValidationError) {
+      const invalidFields = err.inner.map((errorItem) => errorItem.path)
+      const translatedFields = invalidFields.map((field) => t(field ?? ''))
+
+      toaster.error(
+        `${t('error.register')} ${t('address').toLowerCase()}`,
+        getErrorMessage(translatedFields),
+      )
+      console.error(err)
+      return
+    }
+  }
 }
 </script>
 

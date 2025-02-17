@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { type PropType, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouterStore } from '@/stores/router'
+import { useRouterStore } from '@/stores/useRouterStore'
 import router from '@/router'
 
 const props = defineProps({
