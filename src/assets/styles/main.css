@@ -1,12 +1,12 @@
-@import "@/assets/animations/index.css";
-@import "@/assets/styles/components.css";
+@import '@/assets/animations/index.css';
+@import '@/assets/styles/components.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-default ;
+    @apply bg-default;
   }
   h1 {
     @apply text-3xl font-bold;
@@ -21,6 +21,3 @@
     @apply focus:outline-none;
   }
 }
-
-
-

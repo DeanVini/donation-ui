@@ -10,12 +10,12 @@
 
 .fade-in-out-enter-to {
   opacity: 1;
-  transform: translateY(0px) ;
+  transform: translateY(0px);
 }
 
 .fade-in-out-leave-from {
   opacity: 1;
-  transform: translateY(0px) ;
+  transform: translateY(0px);
 }
 
 .fade-in-out-leave-to {

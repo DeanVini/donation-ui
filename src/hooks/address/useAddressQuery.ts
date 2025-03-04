@@ -11,5 +11,12 @@ export default function useAddressQuery() {
     })
   }
 
-  return { getAll }
+  const getById = (id: number): UseQueryReturnType<Address, Error> => {
+    return useQuery({
+      queryKey: ['addresses'],
+      queryFn: () => useAddressService().getById(id),
+    })
+  }
+
+  return { getAll, getById }
 }

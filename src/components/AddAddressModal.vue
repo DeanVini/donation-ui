@@ -4,7 +4,7 @@
       <h2>{{ `${t('create')} ${t('address')}` }}</h2>
     </header>
 
-    <div class="w-full grid grid-cols-2 py-6 gap-6">
+    <div class="min-w-[30rem] grid grid-cols-2 py-6 gap-6 items-between justify-items-center">
       <TextInput
         v-model="addressData.postalCode"
         name="postalCode"

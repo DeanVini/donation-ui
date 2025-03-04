@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import TextInput from '@/components/TextInput.vue'
-import { ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
 import PasswordInput from '@/components/PasswordInput.vue'
 import BaseSection from '@/components/BaseSection.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -67,6 +67,20 @@ const authHandler = () => {
       },
     },
   )
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleEnter)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleEnter)
+})
+
+const handleEnter = (event: KeyboardEvent) => {
+  if (event.key === 'Enter') {
+    authHandler()
+  }
 }
 </script>
 
