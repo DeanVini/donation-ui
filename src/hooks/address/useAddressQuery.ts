@@ -2,6 +2,7 @@ import { useMutation, useQuery } from '@tanstack/vue-query'
 import useAddressService from '@/services/addressService'
 import type { UseQueryReturnType } from '@tanstack/vue-query'
 import type { Address } from '@/interfaces/addressInterface'
+import type { AddressParams } from '@/interfaces/AddressParamsInterface'
 
 export default function useAddressQuery() {
   const getAll = (): UseQueryReturnType<Address[], Error> => {
@@ -11,10 +12,10 @@ export default function useAddressQuery() {
     })
   }
 
-  const getById = (id: number): UseQueryReturnType<Address, Error> => {
+  const getById = (id: number, params: AddressParams): UseQueryReturnType<Address, Error> => {
     return useQuery({
       queryKey: ['addresses'],
-      queryFn: () => useAddressService().getById(id),
+      queryFn: () => useAddressService().getById(id, params),
     })
   }
 

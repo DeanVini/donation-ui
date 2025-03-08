@@ -1,6 +1,6 @@
 <template>
   <div class="relative overflow-x-auto">
-    <table class="w-full text-left table-auto border-spacing-y-2 border-default">
+    <table class="w-full text-left table-auto border-spacing-y-2 border-default table-body">
       <thead>
         <tr>
           <th

@@ -1,0 +1,26 @@
+@import "./_table.css";
+
+@layer components {
+  .border-default {
+    @apply dark:border-slate-200 border-slate-900;
+  }
+
+  .bg-default {
+    @apply bg-gray-200 text-slate-900 border-default;
+    @apply dark:bg-neutral-900 dark:text-slate-200;
+  }
+
+  .text-secondary {
+    @apply text-neutral-900/50 dark:text-slate-200/50
+  }
+
+
+  .dark {
+    .table-body {
+      img {
+        box-shadow: 0 0 0 2px #3f4865, 1px 1px 5px rgba(0, 0, 0, 0.32);
+      }
+    }
+  }
+
+}

@@ -1,5 +1,6 @@
 import type { Address, AddressInput } from '@/interfaces/addressInterface'
 import { useInjector } from '@/composables/useInjector'
+import type { AddressParams } from '@/interfaces/AddressParamsInterface'
 
 export default function useAddressService() {
   const baseRoute = 'address/'
@@ -7,8 +8,8 @@ export default function useAddressService() {
     return await useInjector().get().setRoute(baseRoute).execute()
   }
 
-  const getById = async (id: number): Promise<Address> => {
-    return await useInjector().get().setRoute(`${baseRoute}${id}`).execute()
+  const getById = async (id: number, params: AddressParams): Promise<Address> => {
+    return await useInjector().get().setRoute(`${baseRoute}${id}`).setParams(params).execute()
   }
 
   const postAddress = async (data: AddressInput): Promise<Address[]> => {

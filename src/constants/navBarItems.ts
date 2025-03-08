@@ -8,22 +8,22 @@ export const NAV_ITEMS = [
   },
   {
     i18nKey: 'families',
-    path: '/family',
+    path: '/families',
     icon: UsersRound,
   },
   {
     i18nKey: 'people',
-    path: '/person',
+    path: '/people',
     icon: FileUser,
   },
   {
     i18nKey: 'addresses',
-    path: '/address',
+    path: '/addresses',
     icon: MapPinned,
   },
   {
     i18nKey: 'services',
-    path: '/service',
+    path: '/services',
     icon: Boxes,
   },
 ] as const

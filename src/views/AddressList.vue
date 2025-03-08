@@ -7,7 +7,12 @@
       </BaseButton>
     </header>
     <BaseTable :columns="columns" :loading="isLoading">
-      <tr v-for="address in addresses" :key="address.id" class="table-body bg-default">
+      <tr
+        v-for="address in addresses"
+        :key="address.id"
+        class="bg-default cursor-pointer ease-in-out duration-300 hover:-translate-y-[3px]"
+        @click="routeToAddressDetails(address.id)"
+      >
         <td>{{ address.state }}</td>
         <td>{{ address.city }}</td>
         <td>{{ address.neighborhood }}</td>
@@ -23,12 +28,11 @@
 import BaseTable from '@/components/BaseTable.vue'
 
 import { useI18n } from 'vue-i18n'
-import { computed, type ComputedRef, onMounted, type Ref, ref } from 'vue'
-import useAddressService from '@/services/addressService'
-import type { Address } from '@/interfaces/addressInterface'
+import { computed, type ComputedRef, onMounted, ref } from 'vue'
 import BaseButton from '@/components/BaseButton.vue'
 import useAddressQuery from '@/hooks/address/useAddressQuery'
 import AddAddressModal from '@/components/AddAddressModal.vue'
+import router from '@/router'
 
 const { getAll } = useAddressQuery()
 
@@ -47,6 +51,10 @@ const columns: ComputedRef<Array<string>> = computed(() => [
 
 const addAddressModalStateHandler = () => {
   openAddAddressModal.value = true
+}
+
+const routeToAddressDetails = (id) => {
+  router.push(`address/${id}`)
 }
 
 onMounted(async () => {})
