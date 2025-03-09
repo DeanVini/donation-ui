@@ -53,7 +53,7 @@ const addAddressModalStateHandler = () => {
   openAddAddressModal.value = true
 }
 
-const routeToAddressDetails = (id) => {
+const routeToAddressDetails = (id: number) => {
   router.push(`address/${id}`)
 }
 

@@ -1,3 +1,5 @@
+import { array } from 'yup'
+
 export interface Address {
   id: number
   street: string
@@ -7,6 +9,9 @@ export interface Address {
   state: string
   additionalInfo: string
   number: number
+  latitude: number
+  longitude: number
+  people: [object]
 }
 
 export interface AddressInput {
