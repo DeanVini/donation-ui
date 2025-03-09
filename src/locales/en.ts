@@ -51,6 +51,8 @@ const validation = {
     requiredField: 'The fields {fields} are required | The field {fields} is required',
     invalidEmail: 'Invalid email',
     register: 'Error while registering',
+    'session.expired': 'Session expired',
+    'session.login_again': 'Please log in again',
   },
   success: {
     success: 'Success',

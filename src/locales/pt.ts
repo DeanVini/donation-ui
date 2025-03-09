@@ -49,6 +49,8 @@ const validation = {
     requiredField: 'Os campos {fields} são obrigatórios | O Campo {fields} é obrigatório',
     invalidEmail: 'E-mail inválido',
     register: 'Erro ao cadastrar',
+    'session.expired': 'Tempo de sessão expirado',
+    'session.login_again': 'Por favor, efetue login novamente',
   },
   success: {
     success: 'Sucesso',

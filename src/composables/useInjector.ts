@@ -1,7 +1,11 @@
 import { ref } from 'vue'
 import { axiosInstance } from '@/services/axiosInstance'
+import { useToaster } from '@/composables/useToaster'
+import i18n from '@/i18n'
 
 export const useInjector = () => {
+  const toaster = useToaster()
+
   const method = ref('GET')
   const route = ref('')
   const params = ref({})
@@ -68,6 +72,13 @@ export const useInjector = () => {
         )
         return response.data
       } catch (error: any) {
+        const isTokenExpirado =
+          (error.status === 401 || error.status === 403) && error.data.error === 'TOKEN_EXPIRED'
+
+        if (isTokenExpirado) {
+          localStorage.removeItem('token')
+          toaster.error(i18n.global.t('session.login_again'), i18n.global.t('session.expired'))
+        }
         throw error.response ?? error
       }
     },

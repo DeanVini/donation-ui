@@ -11,7 +11,7 @@ export interface Toast {
 }
 
 export interface ToastPayload {
-  title: string
+  title?: string
   text: string
   timeout?: number
 }

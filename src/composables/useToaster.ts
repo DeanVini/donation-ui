@@ -3,27 +3,27 @@ import { useToastStore } from '@/stores/useToastStore'
 export const useToaster = () => {
   const toastStore = useToastStore()
 
-  const error = (title: string = '', message: string) => {
+  const error = (message: string, title?: string) => {
     toastStore.addToast({ title, text: message }, 'error')
   }
 
-  const success = (title: string = '', message: string) => {
+  const success = (message: string, title?: string) => {
     toastStore.addToast({ title, text: message }, 'success')
   }
 
-  const alert = (title: string = '', message: string) => {
+  const alert = (message: string, title?: string) => {
     toastStore.addToast({ title, text: message }, 'alert')
   }
 
-  const info = (title: string = '', message: string) => {
+  const info = (message: string, title?: string) => {
     toastStore.addToast({ title, text: message }, 'info')
   }
 
-  const contrast = (title: string = '', message: string) => {
+  const contrast = (message: string, title?: string) => {
     toastStore.addToast({ title, text: message }, 'contrast')
   }
 
-  const neutral = (title: string = '', message: string) => {
+  const neutral = (message: string, title?: string) => {
     toastStore.addToast({ title, text: message }, 'neutral')
   }
 
