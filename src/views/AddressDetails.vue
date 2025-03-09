@@ -2,6 +2,7 @@
   <div class="px-10 py-14">
     <TransitionGroup name="list">
       <div v-if="data?.latitude">
+        <BaseButton class="absolute z-10 right-0 mr-12 my-2">Editar Posição</BaseButton>
         <MapLocation class="!h-[15rem]" :latitude="data.latitude" :longitude="data.longitude" />
       </div>
       <BaseSection
@@ -75,6 +76,7 @@ import BaseSection from '@/components/BaseSection.vue'
 import { useI18n } from 'vue-i18n'
 import MapLocation from '@/components/MapLocation.vue'
 import { Mail, Phone } from 'lucide-vue-next'
+import BaseButton from '@/components/BaseButton.vue'
 
 const props = defineProps({
   addressId: {
