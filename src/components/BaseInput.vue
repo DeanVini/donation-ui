@@ -13,14 +13,11 @@
       <input
         ref="inputRef"
         class="autofill:!bg-yellow-500 appearance-none"
-        :value="props.modelValue"
+        v-model="value"
         :id="props.label"
         :type="props.type"
         @focusin="(event) => handleInputFocusIn((event.target as HTMLInputElement).value)"
         @focusout="(event) => handleInputFocusOut((event.target as HTMLInputElement).value)"
-        @input="
-          (event) => emit('update:modelValue', (event.target as HTMLInputElement).value ?? '')
-        "
       />
     </label>
   </div>
@@ -44,7 +41,7 @@ const props = defineProps({
   },
 })
 
-const emit = defineEmits(['update:modelValue'])
+const value = defineModel()
 
 const labelAbove = ref(false)
 const focused = ref(false)

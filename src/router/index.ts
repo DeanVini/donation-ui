@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthState } from '@/composables/useAuthState'
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import NoAuthLayout from '@/layouts/NoAuthLayout.vue'
-import { useRouterStore } from '@/stores/router'
+import { useRouterStore } from '@/stores/useRouterStore'
 
 function lazyLoadView(view: string) {
   return () => import(`../views/${view}.vue`)
@@ -28,20 +28,33 @@ const router = createRouter({
       meta: { layout: NoAuthLayout },
     },
     {
-      path: '/person',
+      path: '/people',
       name: 'person',
       component: lazyLoadView('HomeView'),
       meta: { requiresAuth: true, layout: DefaultLayout },
     },
     {
-      path: '/address',
+      path: '/addresses',
       name: 'address',
       component: lazyLoadView('AddressList'),
       meta: { requiresAuth: true, layout: DefaultLayout },
     },
     {
-      path: '/service',
+      path: '/address/:addressId',
+      name: 'addressDetails',
+      component: lazyLoadView('AddressDetails'),
+      props: true,
+      meta: { requiresAuth: true, layout: DefaultLayout },
+    },
+    {
+      path: '/services',
       name: 'service',
+      component: lazyLoadView('HomeView'),
+      meta: { requiresAuth: true, layout: DefaultLayout },
+    },
+    {
+      path: '/families',
+      name: 'family',
       component: lazyLoadView('HomeView'),
       meta: { requiresAuth: true, layout: DefaultLayout },
     },

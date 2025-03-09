@@ -14,15 +14,10 @@
         <TextInput
           :label="t('emailOrUsername')"
           autocomplete="username"
-          :model-value="loginForm.username"
+          v-model="loginForm.username"
           :error="error"
-          @update:model-value="(value: string) => (loginForm.username = value)"
         />
-        <PasswordInput
-          :label="t('password')"
-          :model-value="loginForm.password"
-          @update:model-value="(value: string) => (loginForm.password = value)"
-        />
+        <PasswordInput :label="t('password')" v-model="loginForm.password" />
         <div class="mt-2">
           <BaseButton class="w-24 font-semibold" color="mantis" type="solid" :disabled="isPending">
             <span v-if="isPending" class="flex justify-center">
@@ -38,7 +33,7 @@
 
 <script setup lang="ts">
 import TextInput from '@/components/TextInput.vue'
-import { ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
 import PasswordInput from '@/components/PasswordInput.vue'
 import BaseSection from '@/components/BaseSection.vue'
 import BaseButton from '@/components/BaseButton.vue'
@@ -72,6 +67,20 @@ const authHandler = () => {
       },
     },
   )
+}
+
+onMounted(() => {
+  window.addEventListener('keydown', handleEnter)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('keydown', handleEnter)
+})
+
+const handleEnter = (event: KeyboardEvent) => {
+  if (event.key === 'Enter') {
+    authHandler()
+  }
 }
 </script>
 

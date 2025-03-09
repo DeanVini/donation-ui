@@ -30,16 +30,13 @@ const entities = {
   family: 'Family',
 }
 
-const general = {
-  home: 'Home',
-}
-
 const address = {
   street: 'Street',
   postalCode: 'Postal Code',
   neighborhood: 'Neighborhood',
   city: 'City',
   state: 'State',
+  number: 'Number',
   additionalInfo: 'Additional Infos',
 }
 
@@ -49,10 +46,31 @@ const crud = {
   delete: 'Delete',
 }
 
+const validation = {
+  error: {
+    requiredField: 'The fields {fields} are required | The field {fields} is required',
+    invalidEmail: 'Invalid email',
+    register: 'Error while registering',
+    'session.expired': 'Session expired',
+    'session.login_again': 'Please log in again',
+  },
+  success: {
+    success: 'Success',
+    register: 'Successfully registered',
+  },
+}
+
+const general = {
+  home: 'Home',
+  confirm: 'Confirm',
+  cancel: 'Cancel',
+}
+
 export default {
   ...loginForm,
   ...entities,
   ...general,
   ...address,
   ...crud,
+  ...validation,
 }

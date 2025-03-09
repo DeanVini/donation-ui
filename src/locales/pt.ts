@@ -38,14 +38,30 @@ const address = {
   additionalInfo: 'Informações adicionais',
 }
 
-const general = {
-  home: 'Início',
-}
-
 const crud = {
   create: 'Cadastrar',
   edit: 'Editar',
   delete: 'Excluir',
+}
+
+const validation = {
+  error: {
+    requiredField: 'Os campos {fields} são obrigatórios | O Campo {fields} é obrigatório',
+    invalidEmail: 'E-mail inválido',
+    register: 'Erro ao cadastrar',
+    'session.expired': 'Tempo de sessão expirado',
+    'session.login_again': 'Por favor, efetue login novamente',
+  },
+  success: {
+    success: 'Sucesso',
+    register: 'Cadastrado com sucesso',
+  },
+}
+
+const general = {
+  home: 'Início',
+  confirm: 'Confirmar',
+  cancel: 'Cancelar',
 }
 
 export default {
@@ -54,4 +70,5 @@ export default {
   ...general,
   ...address,
   ...crud,
+  ...validation,
 }

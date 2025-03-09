@@ -1,21 +1,23 @@
 <template>
   <div class="relative overflow-x-auto">
-    <table class="w-full text-left table-auto border-spacing-y-2">
+    <table class="w-full text-left table-auto border-spacing-y-2 border-default table-body">
       <thead>
         <tr>
-          <th v-for="column in columns" scope="col" class="font-medium opacity-[60%] pb-1">
+          <th
+            v-for="column in columns"
+            :key="column"
+            scope="col"
+            class="font-medium opacity-[60%] pb-1"
+          >
             {{ column.toUpperCase() }}
           </th>
         </tr>
       </thead>
       <tbody class="rounded-lg">
-        <tr
-          v-if="props.loading"
-          class="border-gray-100 last:border-none even:bg-gray-100 even:bg-opacity-20"
-        >
-          <td v-for="column in props.columns.length + 1" class="px-4 py-4">
-            <div class="animate-pulse flex space-x-4">
-              <div class="h-2 w-2/4 bg-gray-100 rounded"></div>
+        <tr v-if="props.loading" class="table-body bg-default">
+          <td v-for="column in props.columns.length" :key="column">
+            <div class="animate-pulse flex">
+              <div class="h-[2rem] w-2/4 bg-gray-100/40 dark:bg-neutral-800"></div>
             </div>
           </td>
         </tr>
@@ -28,7 +30,7 @@
 <script setup lang="ts">
 const props = defineProps({
   columns: {
-    type: Array<String>,
+    type: Array<string>,
     required: true,
   },
   loading: {

@@ -1,4 +1,4 @@
-import { Boxes, FileUser, House, MapPinned } from 'lucide-vue-next'
+import { Boxes, FileUser, House, MapPinned, UsersRound } from 'lucide-vue-next'
 
 export const NAV_ITEMS = [
   {
@@ -7,18 +7,23 @@ export const NAV_ITEMS = [
     icon: House,
   },
   {
+    i18nKey: 'families',
+    path: '/families',
+    icon: UsersRound,
+  },
+  {
     i18nKey: 'people',
-    path: '/person',
+    path: '/people',
     icon: FileUser,
   },
   {
     i18nKey: 'addresses',
-    path: '/address',
+    path: '/addresses',
     icon: MapPinned,
   },
   {
     i18nKey: 'services',
-    path: '/service',
+    path: '/services',
     icon: Boxes,
   },
 ] as const
