@@ -8,6 +8,7 @@
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fcareon.deanvinici.us)](https://careon.deanvinici.us/)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?logo=vue.js)](https://vuejs.org/)
+[![Tailwind](https://img.shields.io/badge/Tailwind_CSS-grey?logo=tailwind-css)](https://tailwindcss.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![Pinia](https://img.shields.io/badge/Pinia-State%20Management-yellow?logo=vue.js)](https://pinia.vuejs.org/)
 [![i18n](https://img.shields.io/badge/i18n-Multilingual-green)](https://vue-i18n.intlify.dev/)
