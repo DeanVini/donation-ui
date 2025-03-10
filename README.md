@@ -35,7 +35,7 @@ CareOn is a web application designed to facilitate the management of assistance 
 - **Routing:** Vue Router
 - **Queries and Cache:** Vue Query (TanStack)
 - **Internationalization:** Vue i18n
-- **Styling:** Modern CSS methodology
+- **Styling:** CSS and Tailwind
 - **Validation:** Custom validation system
 
 ## 📁 Project Structure
@@ -126,7 +126,7 @@ O CareOn é uma aplicação web desenvolvida para facilitar a gestão de serviç
 - **Roteamento:** Vue Router
 - **Queries e Cache:** Vue Query (TanStack)
 - **Internacionalização:** Vue i18n
-- **Estilização:** CSS com metodologia moderna
+- **Estilização:** CSS e Tailwind
 - **Validação:** Sistema próprio de validadores
 
 ## 📁 Estrutura do Projeto
