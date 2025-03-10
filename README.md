@@ -97,9 +97,9 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📫 Contact
 
 - Website: [https://careon.deanvinici.us/](https://careon.deanvinici.us/)
-- Email: [your-email@example.com]
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
+- Email: [deanvinicius2003@gmail.com.br](mailto:deanvinicius2003@gmail.com)
+- LinkedIn: [Dean Vinícius](https://www.linkedin.com/in/dean-vin%C3%ADcius-26b274258/)
+- GitHub: [DeanVini](https://github.com/DeanVini)
 
 ---
 
@@ -188,9 +188,9 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 ## 📫 Contato
 
 - Website: [https://careon.deanvinici.us/](https://careon.deanvinici.us/)
-- Email: [seu-email@exemplo.com]
-- LinkedIn: [Seu LinkedIn]
-- GitHub: [Seu GitHub]
+- Email: [deanvinicius2003@gmail.com.br](mailto:deanvinicius2003@gmail.com)
+- LinkedIn: [Dean Vinícius](https://www.linkedin.com/in/dean-vin%C3%ADcius-26b274258/)
+- GitHub: [DeanVini](https://github.com/DeanVini)
 
 ---
 
