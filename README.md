@@ -1,63 +1,102 @@
-# donation-ui
+# CareOn 🤝
 
-This template should help get you started developing with Vue 3 in Vite.
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fcareon.deanvinici.us)](https://careon.deanvinici.us/)
+[![Vue.js](https://img.shields.io/badge/Vue.js-3.x-4FC08D?logo=vue.js)](https://vuejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Pinia](https://img.shields.io/badge/Pinia-State%20Management-yellow?logo=vue.js)](https://pinia.vuejs.org/)
+[![i18n](https://img.shields.io/badge/i18n-Multilingual-green)](https://vue-i18n.intlify.dev/)
 
-## Recommended IDE Setup
+## 💡 Sobre o Projeto
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+O CareOn é uma aplicação web desenvolvida para facilitar a gestão de serviços assistenciais prestados a famílias em situação de vulnerabilidade. Nossa plataforma serve como uma ponte entre doadores, voluntários e famílias necessitadas, otimizando o processo de distribuição de recursos e acompanhamento de serviços.
 
-## Type Support for `.vue` Imports in TS
+### 🎯 Principais Funcionalidades
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- 📦 Gerenciamento de doações (cestas básicas, roupas, etc.)
+- 👥 Cadastro e acompanhamento de famílias assistidas
+- 🤝 Controle de serviços de cuidados e assistência
+- 📊 Relatórios e métricas de impacto social
+- 📱 Interface responsiva e intuitiva
+- 🌍 Suporte a múltiplos idiomas
 
-## Customize configuration
+## 🛠️ Tecnologias Utilizadas
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- **Frontend Framework:** Vue.js 3 com Composition API
+- **Linguagem:** TypeScript
+- **Gerenciamento de Estado:** Pinia
+- **Roteamento:** Vue Router
+- **Queries e Cache:** Vue Query (TanStack)
+- **Internacionalização:** Vue i18n
+- **Estilização:** CSS com metodologia moderna
+- **Validação:** Sistema próprio de validadores
 
-## Project Setup
+## 📁 Estrutura do Projeto
 
-```sh
+```
+src/
+├── assets/      # Recursos estáticos (imagens, estilos)
+├── components/  # Componentes Vue reutilizáveis
+├── composables/ # Composables Vue para lógica reutilizável
+├── constants/   # Constantes e configurações
+├── hooks/       # Hooks personalizados
+├── interfaces/  # Definições de tipos TypeScript
+├── layouts/     # Layouts da aplicação
+├── locales/     # Arquivos de tradução
+├── router/      # Configuração de rotas
+├── services/    # Serviços e integrações
+├── stores/      # Stores Pinia
+├── validators/  # Validadores personalizados
+└── views/       # Componentes de página
+```
+
+## 🚀 Como Começar
+
+1. Clone o repositório
+```bash
+git clone https://github.com/seu-usuario/careon.git
+```
+
+2. Instale as dependências
+```bash
+cd careon
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+3. Configure as variáveis de ambiente
+```bash
+cp .env.example .env
+```
 
-```sh
+4. Inicie o servidor de desenvolvimento
+```bash
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## 🤝 Contribuindo
 
-```sh
-npm run build
-```
+Contribuições são sempre bem-vindas! Siga estes passos:
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'feat: nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
 
-```sh
-npm run test:unit
-```
+## 📝 Licença
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+Este projeto está licenciado sob a [MIT License](LICENSE).
 
-```sh
-npm run test:e2e:dev
-```
+## 📫 Contato
 
-This runs the end-to-end tests against the Vite development server.
-It is much faster than the production build.
+- Website: [https://careon.deanvinici.us/](https://careon.deanvinici.us/)
+- Email: [deanvinicius2003@gmail.com.br](mailto:deanvinicius2003@gmail.com)
+- LinkedIn: [Dean Vinícius](https://www.linkedin.com/in/dean-vin%C3%ADcius-26b274258/)
+- GitHub: [DeanVini](https://github.com/DeanVini)
 
-But it's still recommended to test the production build with `test:e2e` before deploying (e.g. in CI environments):
+---
 
-```sh
-npm run build
-npm run test:e2e
-```
+<div align="center">
 
-### Lint with [ESLint](https://eslint.org/)
+Desenvolvido com ❤️ para fazer a diferença na vida das pessoas.
 
-```sh
-npm run lint
-```
-
-Ok
+</div>
