@@ -26,14 +26,16 @@
                 <div class="text-secondary">{{ data?.additionalInfo }}</div>
               </div>
               <div
+                v-for="family in data?.families"
+                :key="family.id"
                 class="mt-6 lg:mt-0 flex-1 px-5 border-l border-r border-slate-200/60 dark:border-neutral-900/50 border-t lg:border-t-0 pt-5 lg:pt-0"
               >
                 <div class="font-medium text-center lg:text-left lg:mt-3">
-                  Family Name Contact Details
+                  {{ $t('contactDetails', { name: family.name }) }}
                 </div>
                 <div class="flex flex-col justify-center items-center lg:items-start mt-4">
                   <div class="truncate sm:whitespace-normal flex items-center">
-                    <Phone class="w-4 h-4 mr-2" /> +55 (00) 00000-0000
+                    <Phone class="w-4 h-4 mr-2" /> {{ family.leader.telephone }}
                   </div>
                   <div class="truncate sm:whitespace-normal flex items-center mt-3">
                     <Mail class="w-4 h-4 mr-2" />
@@ -46,16 +48,20 @@
               >
                 <div class="text-center rounded-md w-20 py-3">
                   <div class="font-medium text-primary text-xl">
-                    {{ data?.people?.length || 0 }}
+                    {{ data?.peopleCount || 0 }}
                   </div>
                   <div class="text-secondary">Moradores</div>
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
-                  <div class="font-medium text-primary text-xl">0</div>
+                  <div class="font-medium text-primary text-xl">
+                    {{ data?.families?.length || 0 }}
+                  </div>
                   <div class="text-secondary">{{ t('families') }}</div>
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
-                  <div class="font-medium text-primary text-xl">0</div>
+                  <div class="font-medium text-primary text-xl">
+                    {{ data?.families?.services?.length || 0 }}
+                  </div>
                   <div class="text-secondary">{{ t('services') }}</div>
                 </div>
               </div>

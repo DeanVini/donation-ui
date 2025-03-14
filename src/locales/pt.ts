@@ -38,6 +38,10 @@ const address = {
   additionalInfo: 'Informações adicionais',
 }
 
+const family = {
+  contactDetails: 'Detalhes de Contato de {name}',
+}
+
 const crud = {
   create: 'Cadastrar',
   edit: 'Editar',
@@ -71,4 +75,5 @@ export default {
   ...address,
   ...crud,
   ...validation,
+  ...family,
 }

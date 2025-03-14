@@ -1,4 +1,5 @@
-import { array } from 'yup'
+import type { FamilyInterface } from '@/interfaces/familyInterface'
+import { list } from 'postcss'
 
 export interface Address {
   id: number
@@ -11,7 +12,8 @@ export interface Address {
   number: number
   latitude: number
   longitude: number
-  people: [object]
+  peopleCount: number
+  families: any
 }
 
 export interface AddressInput {
