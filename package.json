@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@alasdair/eslint-plugin-max-len": "^1.1.0",
+    "@egjs/flicking-plugins": "^4.7.1",
+    "@egjs/vue3-flicking": "^4.12.0",
     "@floating-ui/vue": "^1.1.6",
     "@tanstack/vue-query": "^5.62.7",
     "@tanstack/vue-query-devtools": "^5.62.7",
