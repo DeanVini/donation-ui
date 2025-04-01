@@ -1,6 +1,4 @@
 import type { FamilyInterface } from '@/interfaces/familyInterface'
-import { list } from 'postcss'
-
 export interface Address {
   id: number
   street: string
