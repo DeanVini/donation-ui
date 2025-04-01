@@ -60,7 +60,6 @@
                       </div>
                     </div>
                   </div>
-                  >
                   <template #viewport>
                     <div class="flicking-arrow-prev is-thin"></div>
                     <div class="flicking-arrow-next is-thin"></div>
