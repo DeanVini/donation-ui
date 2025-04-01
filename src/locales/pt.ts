@@ -35,11 +35,13 @@ const address = {
   city: 'Cidade',
   state: 'Estado',
   number: 'Numero',
+  members: 'Membros',
   additionalInfo: 'Informações adicionais',
 }
 
 const family = {
   contactDetails: 'Detalhes de Contato de {name}',
+  noFamilyMembers: 'Nenhum membro da família encontrado',
 }
 
 const crud = {
@@ -62,6 +64,30 @@ const validation = {
   },
 }
 
+const services = {
+  food: 'Alimentação',
+  health: 'Saúde',
+  hygiene: 'Higiene',
+  shelter: 'Moradia',
+  education: 'Educação',
+  punctuation: 'Pontuação',
+}
+
+const dates = {
+  january: 'Janeiro',
+  february: 'Fevereiro',
+  march: 'Março',
+  april: 'Abril',
+  may: 'Maio',
+  june: 'Junho',
+  july: 'Julho',
+  august: 'Agosto',
+  september: 'Setembro',
+  october: 'Outubro',
+  november: 'Novembro',
+  december: 'Dezembro',
+}
+
 const general = {
   home: 'Início',
   confirm: 'Confirmar',
@@ -76,4 +102,6 @@ export default {
   ...crud,
   ...validation,
   ...family,
+  ...services,
+  ...dates,
 }

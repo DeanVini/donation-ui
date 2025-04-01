@@ -1,0 +1,24 @@
+.apexcharts-text {
+  @apply dark:!text-slate-200 dark:!fill-slate-200;
+}
+
+.apexcharts-inner .apexcharts-graphical{
+  @apply !p-2
+}
+
+.apexcharts-menu {
+  @apply !bg-default
+}
+
+.apexcharts-menu-item{
+  @apply dark:hover:!bg-slate-100/10 !transition-all hover:!bg-slate-900/10 !rounded-sm
+}
+
+.apexcharts-tooltip, .apexcharts-tooltip-title {
+  @apply !bg-gray-200/80 !text-slate-900 !border-default;
+  @apply dark:!bg-neutral-900/80 dark:!text-slate-200;
+}
+
+.apexcharts-toolbar {
+  @apply !-translate-y-2;
+}

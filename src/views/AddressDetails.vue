@@ -43,11 +43,11 @@
                   <div
                     v-for="family in data?.families"
                     :key="family.id"
-                    class="w-full w-full px-5 pt-5 lg:pt-0"
+                    class="w-full px-5 pt-5 lg:pt-0"
                   >
                     <div class="pl-5">
                       <div class="font-medium text-center lg:text-left lg:mt-3">
-                        {{ $t('contactDetails', { name: family.name }) }}
+                        {{ $t('contactDetails', { name: family?.name }) }}
                       </div>
                       <div class="flex flex-col justify-center items-center lg:items-start mt-4">
                         <div class="truncate sm:whitespace-normal flex items-center">
@@ -96,9 +96,71 @@
       </BaseSection>
       <div class="max-w-full relative" :key="data?.id">
         <TransitionGroup name="list">
-          <BaseSection v-if="data?.families" class="w-full mt-4 p-4" :key="currentFamilyIndex">
-            Família {{ data?.families[currentFamilyIndex].name }}
-          </BaseSection>
+          <div v-if="data?.families" :key="currentFamilyIndex" class="w-full">
+            <BaseSection class="mt-4 p-4 w-full">
+              <div v-if="!isFetching" :key="data?.id" class="px-5 p-5">
+                <div
+                  :key="data?.id"
+                  class="flex flex-col lg:flex-row border-slate-200/60 dark:border-neutral-900/50 -mx-5"
+                >
+                  <div
+                    class="flex flex-col mt-6 lg:mt-0 flex-1 px-5 border-r border-slate-200/60 dark:border-neutral-900/50 border-t lg:border-t-0 pt-5 lg:pt-0"
+                  >
+                    <div class="font-semibold w-full">
+                      {{ t('family') }} {{ data?.families[currentFamilyIndex]?.name }}
+                    </div>
+                    <div class="pt-2 px-2 min-h-[20rem]">
+                      <FamilyServicesChart />
+                    </div>
+                  </div>
+                  <div
+                    class="w-5/12 border-r border-slate-200/60 dark:border-neutral-900/50 border-t lg:border-t-0"
+                  >
+                    <div class="px-5 h-full">
+                      <div class="font-medium text-center lg:text-left lg:mt-3">
+                        {{ t('members') }}
+                      </div>
+                      <BaseTable
+                        v-if="data?.families[currentFamilyIndex]?.members.length > 0"
+                        :columns="['']"
+                      >
+                        <tr
+                          v-for="family in data?.families[currentFamilyIndex]?.members"
+                          :key="family.id"
+                          class="w-full px-5 pt-5 lg:pt-0 border-l"
+                        >
+                          <td
+                            class="dark:!bg-neutral-700/30 ease-in-out duration-300 hover:-translate-y-[3px]"
+                          >
+                            <div class="w-full flex items-center justify-between">
+                              {{ family?.name }}
+                              <button class="ease-in-out duration-300 hover:-translate-y-[3px]">
+                                <SquareArrowOutUpRight class="!w-4 !h-4" />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      </BaseTable>
+                      <div v-else class="h-full pb-[50px]">
+                        <div class="w-full flex items-center justify-center h-full">
+                          <div class="text-secondary">
+                            {{ t('noFamilyMembers') }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-6 lg:mt-0 flex-1 flex items-center justify-center px-5 border-t lg:border-0 border-slate-200/60 dark:border-neutral-900/50 pt-5 lg:pt-0"
+                  >
+                    <div class="w-full min-h-[20rem]">
+                      <FamilyProgressChart />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </BaseSection>
+          </div>
         </TransitionGroup>
       </div>
     </TransitionGroup>
@@ -117,14 +179,19 @@ import { Mail, Phone } from 'lucide-vue-next'
 import BaseButton from '@/components/BaseButton.vue'
 import { Fade, Arrow, Pagination } from '@egjs/flicking-plugins'
 import Flicking from '@egjs/vue3-flicking'
+import VueApexCharts from 'vue3-apexcharts'
 import '@egjs/flicking-plugins/dist/arrow.css'
 import '@egjs/vue3-flicking/dist/flicking.css'
 import '@egjs/flicking-plugins/dist/flicking-plugins.css'
 import '@egjs/flicking-plugins/dist/pagination.css'
+import BaseTable from '@/components/BaseTable.vue'
+import { SquareArrowOutUpRight } from 'lucide-vue-next'
+import FamilyProgressChart from '@/components/FamilyProgressChart.vue'
+import FamilyServicesChart from '@/components/FamilyServicesChart.vue'
 
 const props = defineProps({
   addressId: {
-    type: String,
+    type: Number,
     required: true,
   },
 })
