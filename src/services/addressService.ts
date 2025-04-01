@@ -1,4 +1,4 @@
-import type { Address, AddressInput } from '@/interfaces/addressInterface'
+import type { Address, AddressInput } from '@/interfaces/AddressInterface'
 import { useInjector } from '@/composables/useInjector'
 import type { AddressParams } from '@/interfaces/AddressParamsInterface'
 

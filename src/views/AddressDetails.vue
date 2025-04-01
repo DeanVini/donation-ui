@@ -84,7 +84,8 @@
                 </div>
                 <div class="text-center rounded-md w-20 py-3">
                   <div class="font-medium text-primary text-xl">
-                    {{ data?.families?.services?.length || 0 }}
+                    <!--TODO: Make servicesCount on back end -->
+                    0
                   </div>
                   <div class="text-secondary">{{ t('services') }}</div>
                 </div>
@@ -198,8 +199,6 @@ const props = defineProps({
 const { t } = useI18n()
 
 const plugins = [new Fade(), new Arrow(), new Pagination()]
-const addressData = ref({})
-const zoom = ref(2)
 const currentFamilyIndex = ref(0)
 
 const { error, isPending, data, isFetching } = useAddressQuery().getById(props.addressId, {

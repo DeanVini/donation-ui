@@ -70,7 +70,7 @@ import BaseButton from '@/components/BaseButton.vue'
 import { reactive } from 'vue'
 import { useAddressMutation } from '@/hooks/address/useAddressMutation'
 import { LoaderCircle } from 'lucide-vue-next'
-import type { AddressInput } from '@/interfaces/addressInterface'
+import type { AddressInput } from '@/interfaces/AddressInterface'
 import * as yup from 'yup'
 import { useToaster } from '@/composables/useToaster'
 

@@ -1,4 +1,5 @@
-import type { FamilyInterface } from '@/interfaces/familyInterface'
+import type { Family } from '@/interfaces/FamilyInterface'
+
 export interface Address {
   id: number
   street: string
@@ -11,7 +12,7 @@ export interface Address {
   latitude: number
   longitude: number
   peopleCount: number
-  families: any
+  families: Family[]
 }
 
 export interface AddressInput {
