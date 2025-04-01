@@ -1,5 +1,5 @@
 import { useMutation, type UseMutationReturnType } from '@tanstack/vue-query'
-import type { Address, AddressInput } from '@/interfaces/addressInterface'
+import type { Address, AddressInput } from '@/interfaces/AddressInterface'
 import useAddressService from '@/services/addressService'
 import { updateQueryData } from '@/services/cacheHelpers'
 

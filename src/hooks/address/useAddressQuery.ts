@@ -1,7 +1,7 @@
 import { useMutation, useQuery } from '@tanstack/vue-query'
 import useAddressService from '@/services/addressService'
 import type { UseQueryReturnType } from '@tanstack/vue-query'
-import type { Address } from '@/interfaces/addressInterface'
+import type { Address } from '@/interfaces/AddressInterface'
 import type { AddressParams } from '@/interfaces/AddressParamsInterface'
 
 export default function useAddressQuery() {

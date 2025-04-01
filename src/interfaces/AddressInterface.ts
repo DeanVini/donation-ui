@@ -1,4 +1,4 @@
-import { array } from 'yup'
+import type { Family } from '@/interfaces/FamilyInterface'
 
 export interface Address {
   id: number
@@ -11,7 +11,8 @@ export interface Address {
   number: number
   latitude: number
   longitude: number
-  people: [object]
+  peopleCount: number
+  families: Family[]
 }
 
 export interface AddressInput {
